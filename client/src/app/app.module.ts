@@ -13,6 +13,8 @@ import { MatCardModule } from '@angular/material/card'
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { UserAccountComponent } from './user-account/user-account.component';
+import { AnimalsMainComponent } from './animals-main/animals-main.component';
 
 
 
@@ -22,6 +24,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     AppComponent,
     ToolbarComponent,
     DashboardComponent,
+    UserAccountComponent,
+    AnimalsMainComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 
   ],
-  providers: [],
+  providers: [AnimalsMainComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

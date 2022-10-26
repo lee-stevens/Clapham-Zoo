@@ -2,7 +2,7 @@
 
 I am Following the course "Build an app with ASPNET Core and Angular from scratch" from [Udemy](https://www.udemy.com/course/build-an-app-with-aspnet-core-and-angular-from-scratch/).
 
-It uses a ASP.NET's MVC, for joining the Angular frontend with the ASP.NET SQLite backend
+It uses a ASP.NET's MVC, for joining the Angular frontend with the ASP.NET SQLite backend. 
 
 
 ## Skills involved
@@ -42,6 +42,7 @@ It uses a ASP.NET's MVC, for joining the Angular frontend with the ASP.NET SQLit
   `>>dotnet ef database update` //Creates/updates a database 
 
   `>>dotnet ef migrations add NewName` //Creates a new migration for any new changes to the entity framework schema
+
   `>>dotnet ef database update`  //Updates the existing database with the new migration schema
 
 ## Key learning points
@@ -50,7 +51,10 @@ Trust ASP.NET Http certification
 
   `dotnet dev-certs https --trust`
 
+SSL Certificate created and applied, it's on .gitignore
+
 Protected: This class or any classes which inherit this class can access this variable
+
 Private: Only this class can access this variable
 
 
@@ -73,6 +77,7 @@ This course uses SQLite which stores the database in a local file, it is only fo
 An Object Relational Mapper (ORM) which translates code into SQL for our tables in the database. (Creates schemas)
 
 Input  | `DbContext.Users.Add(new User {Id = 4, Name = Lee})`
+
 Output | `INSERT INTO Users(Id, Name) VALUES(4, Lee)`
 
 * Querying

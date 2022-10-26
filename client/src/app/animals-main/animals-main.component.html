@@ -1,0 +1,19 @@
+<div class="container1">
+
+
+<div class="animal-cards-container" *ngFor="let animal of animals">
+  <mat-card class="animal-card">
+
+    <mat-card-header>
+      Animal ID: {{animal.id}}
+    </mat-card-header>
+
+    <mat-card-content>
+      Common Name : {{animal.name}}
+      Binomial Name: {{animal.binomialName}}
+    </mat-card-content>
+
+  </mat-card>
+</div>
+
+</div>

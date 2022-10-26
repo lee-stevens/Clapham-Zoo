@@ -1,5 +1,12 @@
 #toolbar-component {
   width: 100%;
   height: 4vh;
-  background-color: lightblue;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+button {
+  margin: 0 5px;
 }/*# sourceMappingURL=toolbar.component.css.map */
