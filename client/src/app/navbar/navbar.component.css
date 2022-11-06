@@ -1,0 +1,9 @@
+.navbar {
+  height: 80px;
+  width: 100%;
+  background-color: lightblue;
+}
+.navbar img {
+  width: 50px;
+  height: 50px;
+}/*# sourceMappingURL=navbar.component.css.map */

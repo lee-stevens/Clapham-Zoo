@@ -1,1 +1,19 @@
-<p>dashboard works!</p>
+<div id="dashboard-component">
+  <p>App Summary</p>
+  <p>View a collection of all animals housed here at XYZ Zoo</p>
+  <p>Create a customised tour with our tour creator, select your perfect journey today!</p>
+
+  <div class="d-flex flex-row bd-highlight mb-3 bg-light">
+    <ng-container  *ngFor="let animal of animals">
+      <div class="p-2 bd-highlight">
+        <h1 class="text-primary">
+          {{animal.name}}
+        </h1>
+        <p class="text-secondary">
+          Animal ID: {{animal.id}}<br>
+          Binomial Name: {{animal.binomialName}}<br>
+          Common Name: {{animal.name}}
+        </p>
+      </div>
+    </ng-container>
+  </div>
