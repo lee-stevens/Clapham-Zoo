@@ -2,6 +2,7 @@
 using API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20221108221658_AnimalsUpdate")]
+    partial class AnimalsUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.10");
@@ -23,9 +25,6 @@ namespace API.Data.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("BinomialName")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Class")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("CommonName")
@@ -43,16 +42,10 @@ namespace API.Data.Migrations
                     b.Property<string>("Order")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Phylum")
+                    b.Property<string>("Phyum")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Species")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("SubFamily")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("SubOrder")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

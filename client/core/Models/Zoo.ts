@@ -6,5 +6,14 @@ export interface Zoo{
 }
 
 export interface Animal{
-  name: string;
+  id: number;
+  commonName: string;
+  binomialName: string;
+  kingdom: string;
+  phylum: string;
+  class: string;
+  order: string;
+  family: string;
+  genus: string;
+  species: string;
 }

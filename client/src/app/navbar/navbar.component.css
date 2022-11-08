@@ -1,9 +1,13 @@
 .navbar {
-  height: 80px;
-  width: 100%;
   background-color: lightblue;
+  height: 70px;
 }
 .navbar img {
-  width: 50px;
-  height: 50px;
+  height: 30px;
+  width: 30px;
+}
+.navbar .logo {
+  height: 40px;
+  width: 40px;
+  border-radius: 30%;
 }/*# sourceMappingURL=navbar.component.css.map */
