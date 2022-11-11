@@ -1,8 +1,8 @@
 <div id="dashboard-component">
   <h1 class="justify-content-center">Animal Showcase</h1>
   <div class="d-flex flex-wrap bd-highlight bg-light cards">
-    <ng-container  *ngFor="let animal of animals">
-      <div class="card">
+    <ng-container  class="card" *ngFor="let animal of animals">
+      <div class="card m-3">
         <div class="p-3 bd-highlight animal-card">
           <h1 class="text-primary">
             {{animal.name}}
