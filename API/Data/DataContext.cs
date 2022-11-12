@@ -14,5 +14,6 @@ namespace API.Data
     }
 
     public DbSet<Animals> Animals { get; set; }
+    public DbSet<AppUser> AppUsers { get; set; }
   }
 }
