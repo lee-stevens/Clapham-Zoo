@@ -1,33 +1,37 @@
-<h1>Animal Manager</h1>
-<table class="table table-striped table-hover table-bordered">
-  <thead class="">
-    <th scope="col">ID (Key)</th>
-    <th scope="col">Common Name</th>
-    <th scope="col">Binomial Name</th>
-    <th scope="col">Kingdom</th>
-    <th scope="col">Phylum</th>
-    <th scope="col">Class</th>
-    <th scope="col">Order</th>
-    <th scope="col">SubOrder</th>
-    <th scope="col">Family</th>
-    <th scope="col">SubFamily</th>
-    <th scope="col">Genus</th>
-    <th scope="col">Species</th>
-  </thead>
-  <tbody *ngFor="let animal of animals">
-    <tr class="">
-      <td>{{animal.id}}</td>
-      <td>{{animal.commonName}}</td>
-      <td>{{animal.binomialName}}</td>
-      <td>{{animal.kingdom}}</td>
-      <td>{{animal.phylum}}</td>
-      <td>{{animal.class}}</td>
-      <td>{{animal.order}}</td>
-      <td>{{animal.subOrder}}</td>
-      <td>{{animal.family}}</td>
-      <td>{{animal.subFamily}}</td>
-      <td>{{animal.genus}}</td>
-      <td>{{animal.species}}</td>
-    </tr>
-  </tbody>
-</table>
+<main class="m-5">
+  <section>
+    <h1>Animal Manager</h1>
+    <table class="table table-striped table-hover table-bordered">
+      <thead class="">
+        <th scope="col">ID (Key)</th>
+        <th scope="col">Common Name</th>
+        <th scope="col">Binomial Name</th>
+        <th scope="col">Kingdom</th>
+        <th scope="col">Phylum</th>
+        <th scope="col">Class</th>
+        <th scope="col">Order</th>
+        <th scope="col">SubOrder</th>
+        <th scope="col">Family</th>
+        <th scope="col">SubFamily</th>
+        <th scope="col">Genus</th>
+        <th scope="col">Species</th>
+      </thead>
+      <tbody *ngFor="let animal of animals">
+        <tr class="">
+          <td>{{animal.id}}</td>
+          <td>{{animal.commonName}}</td>
+          <td>{{animal.binomialName}}</td>
+          <td>{{animal.kingdom}}</td>
+          <td>{{animal.phylum}}</td>
+          <td>{{animal.class}}</td>
+          <td>{{animal.order}}</td>
+          <td>{{animal.subOrder}}</td>
+          <td>{{animal.family}}</td>
+          <td>{{animal.subFamily}}</td>
+          <td>{{animal.genus}}</td>
+          <td>{{animal.species}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</main>

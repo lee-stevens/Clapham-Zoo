@@ -1,1 +1,8 @@
-/*# sourceMappingURL=app.component.css.map */
+.component {
+  margin: 20px;
+  background: red;
+}
+
+#account-manager-component {
+  background: blue;
+}/*# sourceMappingURL=app.component.css.map */

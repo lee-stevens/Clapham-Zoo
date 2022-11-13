@@ -10,6 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AnimalManagerComponent } from './animal-manager/animal-manager.component';
 import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
+import { AccountManagerComponent } from './account-manager/account-manager.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
     DashboardComponent,
     NavbarComponent,
     AnimalManagerComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AccountManagerComponent,
   ],
   imports: [
     BrowserModule,
