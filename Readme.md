@@ -26,30 +26,41 @@ It uses a ASP.NET's MVC, for joining the Angular frontend with the ASP.NET SQLit
 
   `Microsoft.EntityFrameworkCore.Design` | Entity Framework Design for API ef migrations
 
-  `dotnet tool install --global dotnet-ef --version 7.0.0-rc.2.22472.11` | dotnet-ef for API (Get the version to match your .NET Core version)
+```console
+`dotnet tool install --global dotnet-ef --version 7.0.0-rc.2.22472.11`
+dotnet-ef for API (Get the version to match your .NET Core version)
 
-  `dotnet new gitignore` | Gitignore specific to dotnet
-
+`dotnet new gitignore` | Gitignore specific to dotnet
+```
 
 ## CLI Commands
 
-  `>>dotnet run`
+```console
+>>dotnet run
 
-  `>>dotnet watch run` //Watches for any file changes
+>>dotnet watch run
+//
 
-  `>>dotnet ef migrations add InitialCreate -o Data/Migrations` //[Migrate](https://learn.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=dotnet-core-cli) current C# code into SQL schemas with the name 'InitialCreate'
+>>dotnet ef migrations add InitialCreate -o Data/Migrations 
+//Migrate current C# code into SQL schemas with the name 'InitialCreate'
 
-  `>>dotnet ef database update` //Creates/updates a database 
+>>dotnet ef database update
+//Creates/updates a database                  
 
-  `>>dotnet ef migrations add NewName` //Creates a new migration for any new changes to the entity framework schema
+>>dotnet ef migrations add NewName
+//Creates a new migration for any new changes to the entity framework schema          
 
-  `>>dotnet ef database update`  //Updates the existing database with the new migration schema
+>>dotnet ef database update
+//Updates the existing database with the new migration schema
+```
 
 ## Key learning points
 
 Trust ASP.NET Http certification
 
-  `dotnet dev-certs https --trust`
+```console
+dotnet dev-certs https --trust
+```
 
 SSL Certificate created and applied, it's on .gitignore
 
@@ -63,8 +74,9 @@ Private: Only this class can access this variable
 
 ## ASP.NET
 
-  `prop` //Generates a property boilterplate
-
+```console
+prop //Generates a property boilterplate
+```
 
 
 ## SQL
@@ -76,10 +88,11 @@ This course uses SQLite which stores the database in a local file, it is only fo
 
 An Object Relational Mapper (ORM) which translates code into SQL for our tables in the database. (Creates schemas)
 
-Input  | `DbContext.Users.Add(new User {Id = 4, Name = Lee})`
+```console
+DbContext.Users.Add(new User {Id = 4, Name = Lee})  //Input
 
-Output | `INSERT INTO Users(Id, Name) VALUES(4, Lee)`
-
+INSERT INTO Users(Id, Name) VALUES(4, Lee)          //Ouput
+```
 * Querying
 * Change Tracking
 * Saving
