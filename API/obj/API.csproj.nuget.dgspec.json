@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Web Development\\asp-angular-animal-app\\API\\API.csproj": {}
+    "C:\\Web Development\\asp-angular-animal-app\\ASP-Angular-Animal-App\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Web Development\\asp-angular-animal-app\\API\\API.csproj": {
+    "C:\\Web Development\\asp-angular-animal-app\\ASP-Angular-Animal-App\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Web Development\\asp-angular-animal-app\\API\\API.csproj",
+        "projectUniqueName": "C:\\Web Development\\asp-angular-animal-app\\ASP-Angular-Animal-App\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Web Development\\asp-angular-animal-app\\API\\API.csproj",
-        "packagesPath": "C:\\Users\\Madzp\\.nuget\\packages\\",
-        "outputPath": "C:\\Web Development\\asp-angular-animal-app\\API\\obj\\",
+        "projectPath": "C:\\Web Development\\asp-angular-animal-app\\ASP-Angular-Animal-App\\API\\API.csproj",
+        "packagesPath": "C:\\Users\\leepe\\.nuget\\packages\\",
+        "outputPath": "C:\\Web Development\\asp-angular-animal-app\\ASP-Angular-Animal-App\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Madzp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\leepe\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -74,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
