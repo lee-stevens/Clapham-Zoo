@@ -4,6 +4,16 @@ I am Following the course "Build an app with ASPNET Core and Angular from scratc
 
 It uses a ASP.NET's MVC, for joining the Angular frontend with the ASP.NET SQLite backend. 
 
+## Versions
+1. Angular CLI 14.1.1
+2. Node 16.18.1
+3. npm 8.19.2
+4. win32 x64
+5. .NETCore 6.0.11
+6. .AspNetCore 6.0.11
+5. .NETCore 7.0.0
+6. .AspNetCore 7.0.0
+
 
 ## Skills involved
 
@@ -31,6 +41,8 @@ It uses a ASP.NET's MVC, for joining the Angular frontend with the ASP.NET SQLit
 dotnet-ef for API (Get the version to match your .NET Core version)
 
 `dotnet new gitignore` | Gitignore specific to dotnet
+
+`dotnet dev-certs https --trust
 ```
 
 ## CLI Commands
