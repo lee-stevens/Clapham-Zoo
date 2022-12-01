@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using API.Data;
 using API.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -9,9 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-  [ApiController]
-  [Route("api/[controller]")]
-  public class AnimalsController : ControllerBase
+  public class AnimalsController : BaseApiController
   {
     private readonly DataContext _context;
     public AnimalsController(DataContext context)
@@ -23,14 +17,23 @@ namespace API.Controllers
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Animals>>> GetAnimals() //Use <List> if you want to filtering etc...
     {
-        return await _context.Animals.ToListAsync();
+      return await _context.Animals.ToListAsync();
     }
 
     //E.g. api/animals/1
     [HttpGet("{id}")]
     public async Task<ActionResult<Animals>> GetAnimal(int id) //Use <List> if you want to filtering etc...
     {
-        return await _context.Animals.FindAsync(id);
+      return await _context.Animals.FindAsync(id);
     }
+    
+    [HttpPost]
+    public async Task<ActionResult<Animals>> AddAnimal(Animals animal) //Use <List> if you want to filtering etc...
+    {
+      _context.Animals.AddAsync(animal);
+      Console.WriteLine(animal.CommonName + " added.");
+      return null;
+    }
+
   }
 }
