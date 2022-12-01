@@ -60,15 +60,12 @@ It uses a ASP.NET's MVC, for joining the Angular frontend with the ASP.NET SQLit
 ## Tools Used
 Developed on my main computer 'Valkyrie' and laptop 'Duo-Pro' with the following tools:
 
-1. Angular CLI 14.1.1
-2. Node 16.18.1
-3. npm 9.1.2
-4. win32 x64
-5. .NETCore 6.0.11
-6. .AspNetCore 6.0.11
-7. .NETCore 7.0.0
-8. .AspNetCore 7.0.0
-9. TypeScript 4.8.4
+- Angular CLI 14.1.1
+- Node 16.18.1
+- npm 9.1.2
+- .NETCore 6.0.11
+- TypeScript 4.8.4
+- win32 x64
 
 
 ## Skills involved
