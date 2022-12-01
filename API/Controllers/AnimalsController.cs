@@ -22,18 +22,18 @@ namespace API.Controllers
 
     //E.g. api/animals/1
     [HttpGet("{id}")]
-    public async Task<ActionResult<Animals>> GetAnimal(int id) //Use <List> if you want to filtering etc...
+    public async Task<ActionResult<Animals>> GetAnimal(int id)
     {
       return await _context.Animals.FindAsync(id);
     }
     
     [HttpPost]
-    public async Task<ActionResult<Animals>> AddAnimal(Animals animal) //Use <List> if you want to filtering etc...
+    public async Task<ActionResult<Animals>> AddAnimal(Animals animal)
     {
-      _context.Animals.AddAsync(animal);
+      _context.Animals.Add(animal);
+      await _context.SaveChangesAsync();
       Console.WriteLine(animal.CommonName + " added.");
-      return null;
+      return animal;
     }
-
   }
 }

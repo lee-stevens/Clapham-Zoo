@@ -33,5 +33,17 @@
         </tr>
       </tbody>
     </table>
+    <button (click)="!addAnimal = true">Add Animal?</button>
+
+  </section>
+
+  <section *ngIf="addAnimal">
+    <form class="ng-form">
+      <label>Common Name</label>
+      <input name="commonName" ngModel required label="Common Name">
+      <input name="species" ngModel required>
+
+      <button type="submit">Submit</button>
+    </form>
   </section>
 </main>

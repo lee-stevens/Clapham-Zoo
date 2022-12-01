@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    public class AppUsersController : BaseApiController
+  public class AppUsersController : BaseApiController
     {
     private readonly DataContext _context;
     public AppUsersController(DataContext context)
@@ -24,6 +24,5 @@ namespace API.Controllers
     {
       return await _context.AppUsers.FindAsync(id);
     }
-
-    }
+  }
 }

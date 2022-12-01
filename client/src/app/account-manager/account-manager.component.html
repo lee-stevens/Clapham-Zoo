@@ -1,5 +1,21 @@
 <main class="m-5 d-flex">
   <section>
-    <p>account-manager works!</p>
+    <h1>Account Manager</h1>
+    <table class="table table-striped table-hover table-bordered">
+      <thead>
+        <th scope="col">Id</th>
+        <th scope="col">Username</th>
+        <th scope="col">Password Hash</th>
+        <th scope="col">Password Salt</th>
+      </thead>
+      <tbody *ngFor="let appUser of appUsers">
+        <tr>
+          <td>{{appUser.id}}</td>
+          <td>{{appUser.userName}}</td>
+          <td>{{appUser.passwordHash}}</td>
+          <td>{{appUser.passwordSalt}}</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 </main>

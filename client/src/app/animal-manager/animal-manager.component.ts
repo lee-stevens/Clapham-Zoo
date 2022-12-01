@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class AnimalManagerComponent implements OnInit {
   title = 'Dashboard';
   animals: any;
+  addAnimal: boolean = true;
 
   constructor(private http: HttpClient) {}
 
