@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ThemeService } from '../theme.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private theme: ThemeService) { }
 
   ngOnInit(): void {
+  }
+
+  public switchTheme(): void {
+    console.log("Switching theme");
+    if (this.theme.current === 'light') {
+        this.theme.current = 'dark';
+    } else {
+        this.theme.current = 'light';
+    }
   }
 
 }
