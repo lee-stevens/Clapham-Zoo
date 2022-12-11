@@ -27,7 +27,7 @@ An action can return one of the following.
 ## [MVC Default Route Maps](https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-routing-overview-cs)
 
 Default Map Routes
-```Csharp
+```C#
 routes.MapRoute(
   "Default",                                              // Route name
   "{controller}/{action}/{id}",                           // URL with parameters
@@ -39,7 +39,7 @@ routes.MapRoute(
 
 ## [MVC Unit Testing](https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/unit-testing/creating-unit-tests-for-asp-net-mvc-applications-cs)
 
-```Csharp
+```C#
 namespace StoreTests.Controllers
 {
   //TESTING TARGET
@@ -128,7 +128,7 @@ Benefits
 - one process for verification
 
 [MVC Services](https://stackoverflow.com/questions/38138100/addtransient-addscoped-and-addsingleton-services-differences)
-```Csharp
+```C#
 services.AddScoped<ITokenService, TokenService>();
 //Same within a request, different across different requests
 
@@ -144,6 +144,5 @@ Encryption Key Types
 | :-: | :-: |
 | Symmetric | Server only |
 | Asymmetric | Server and client need to decrpyt with a public key |
-<br><br><br>
 
-# Angular V14
+<br><br><br>
