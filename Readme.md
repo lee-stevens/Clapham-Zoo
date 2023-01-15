@@ -7,8 +7,6 @@ Table of Contents
 | 1             | Design Document         |
 | 2             | Technical Specifcation  | 
 
-<br><br>
-
 # 1] Design Document
 
 A zoo management SPA for zoo visitors to book a visit or view the animals and posts, and for zoo staff to manage all animals, create posts and manage bookings.
@@ -33,7 +31,6 @@ A zoo management SPA for zoo visitors to book a visit or view the animals and po
     - Manage all accounts
     - Manage all animals
 
-
 ## Pages
 
 | Page & Components       | User              | Description |
@@ -47,9 +44,6 @@ A zoo management SPA for zoo visitors to book a visit or view the animals and po
 | booking-manager         | Everyone          | Manage a booking |
 | navbar                  | Everyone          | Navigation to all pages |
 | footer                  | Everyone          | General links & contact etc... |
-
-<br><br><br>
-
 
 # 2] Technical Specification
 
@@ -66,7 +60,6 @@ Developed on my main computer 'Valkyrie' and laptop 'Duo-Pro' with the following
 - .NETCore 6.0.11
 - TypeScript 4.8.4
 - win32 x64
-
 
 ## Skills involved
 
@@ -132,9 +125,7 @@ Protected: This class or any classes which inherit this class can access this va
 
 Private: Only this class can access this variable
 
-
 ## Angular
-
 
 ## ASP.NET
 
@@ -142,11 +133,9 @@ Private: Only this class can access this variable
 prop //Generates a property boilterplate
 ```
 
-
 ## SQL
 
 This course uses SQLite which stores the database in a local file, it is only for <i>develoment<i/> purposes
-
 
 ## Entity Framework | Microsoft
 
