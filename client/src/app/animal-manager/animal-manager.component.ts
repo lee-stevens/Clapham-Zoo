@@ -7,7 +7,6 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./animal-manager.component.scss']
 })
 export class AnimalManagerComponent implements OnInit {
-  title = 'Dashboard';
   animals: any;
   addAnimal: boolean = true;
 
@@ -17,6 +16,10 @@ export class AnimalManagerComponent implements OnInit {
     this.getAnimals();
   }
 
+  // ngOnDestroy(): void {
+  //   this.getSomethingSubscription.unsubscribe();
+  // }
+
   getAnimals(){
     this.http.get("https://localhost:5001/api/animals")
     .subscribe({
@@ -24,4 +27,18 @@ export class AnimalManagerComponent implements OnInit {
       error: err => console.log(err)
     });
   }
-}
+
+  //Example of how subscriptions are supposed to be built
+  // getSometing(){
+  //   const getSomethingObservable = new Observable((observer) => {
+  //     let count = 0;
+  //     setInterval(() => {
+  //       observer.next(count);
+  //       count++;
+  //     }, 1000)
+  //   });
+  //   this.getSomethingSubscription = getSomethingObservable.subscribe(data => {
+  //     console.log(data);
+  //   });
+  // }
+};

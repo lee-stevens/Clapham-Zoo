@@ -35,7 +35,11 @@ import { HomepageComponent          } from './homepage/homepage.component';
     HttpClientModule,
     ButtonsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
