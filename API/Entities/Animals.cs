@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace API.Entities
 {
-    public class Animals
+    public class Animal
     {
         public int Id { get; set; }
         public string CommonName { get; set; }

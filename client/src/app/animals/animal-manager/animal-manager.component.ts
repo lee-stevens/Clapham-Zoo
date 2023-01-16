@@ -13,7 +13,23 @@ import { Animal                 } from '../../models/Animals';
 export class AnimalManagerComponent implements OnInit {
   animals: any;
   animalsTS: Animal[] = [];
-  addAnimal: boolean = true;
+  addAnimal = true;
+  deleteAnimal = true;
+  animalToDelete: number = 9999;
+  animalForm: AnimalForm = {
+    species: '',
+    id: 0,
+    commonName: '',
+    binomialName: '',
+    kingdom: '',
+    phylum: '',
+    class: '',
+    order: '',
+    subOrder: '',
+    family: '',
+    subFamily: '',
+    genus: ''
+  }
 
   constructor(private _http: HttpClient, private _animalManagerService: AnimalManagerService) {}
 
@@ -44,4 +60,28 @@ export class AnimalManagerComponent implements OnInit {
       })
     });
   }
+
+  onSubmitAnimalForm(){
+    this._animalManagerService.addAnimal(this.animalForm);
+  }
+
+  onSubmitDeleteAnimalForm(id: number){
+    this._animalManagerService.deleteAnimal(id);
+  }
+
 };
+
+export interface AnimalForm {
+  id: number
+  commonName: string
+  binomialName: string
+  kingdom: string
+  phylum: string
+  class: string
+  order: string
+  subOrder: string
+  family: string
+  subFamily: string
+  genus: string
+  species: string
+}

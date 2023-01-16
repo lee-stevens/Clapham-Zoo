@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using API.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,7 +9,7 @@ namespace API.Data
     {
     }
 
-    public DbSet<Animals> Animals { get; set; }
+    public DbSet<Animal> Animals { get; set; }
     public DbSet<AppUser> AppUsers { get; set; }
   }
 }

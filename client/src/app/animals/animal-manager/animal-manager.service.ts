@@ -1,4 +1,4 @@
-import { HttpClient             } from '@angular/common/http';
+import { HttpClient, HttpParams             } from '@angular/common/http';
 import { Injectable             } from '@angular/core';
 import { Animal                 } from '../../models/Animals';
 
@@ -20,5 +20,24 @@ export class AnimalManagerService {
       error: err => console.log(err)
     });
     return this.animals;
+  }
+
+  addAnimal(animal: Animal) {
+    console.log(`Adding Animal: ${animal.species}`)
+    console.log(animal)
+    this.http.post("https://localhost:5001/api/animals/", animal)
+    .subscribe((res) => {
+       console.log(res);
+    })
+  }
+
+  deleteAnimal(id: number) {
+    console.log(`Deleting Animal with id: ${id}`)
+    this.http.delete(`https://localhost:5001/api/animals/${id}`)
+    .subscribe((res) => {
+       console.log(res);
+       console.log(`Deleted Animal with id ${id}`)
+       this.getAnimals();
+    })
   }
 }

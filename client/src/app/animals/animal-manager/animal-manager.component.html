@@ -34,16 +34,32 @@
       </tbody>
     </table>
     <button (click)="!addAnimal = true">Add Animal?</button>
-
   </section>
 
   <section *ngIf="addAnimal">
-    <form class="ng-form">
-      <label>Common Name</label>
-      <input name="commonName" ngModel required label="Common Name">
-      <input name="species" ngModel required>
+      <form #addAnimalForm (ngSubmit)="onSubmitAnimalForm()" class="add-animal-container">
+        <label for="species">Species: </label>
+        <input [(ngModel)]="animalForm.species" class="form-control" name="tempAnimalForm.species" type="text">
 
-      <button type="submit">Submit</button>
-    </form>
+        <label for="species">Common Name: </label>
+        <input [(ngModel)]="animalForm.commonName" class="form-control" name="tempAnimalForm.commonName" type="text">
+
+        <label for="species">Kingdom: </label>
+        <input [(ngModel)]="animalForm.kingdom" class="form-control" name="tempAnimalForm.kingdom" type="text">
+
+        <label for="phylum">Phylum: </label>
+        <input [(ngModel)]="animalForm.phylum" class="form-control" name="tempAnimalForm.kingdom" type="text">
+
+        <button class="btn" type="submit">Submit</button>
+        </form>
   </section>
+
+  <section *ngIf="deleteAnimal">
+    <form #deleteAnimalForm (ngSubmit)="onSubmitDeleteAnimalForm(animalToDelete)" class="delete-animal-container">
+      <label for="species">Id: </label>
+      <input [(ngModel)]="animalToDelete" class="form-control" name="animalToDelete" type="number">
+
+      <button class="btn" type="submit">Submit</button>
+      </form>
+</section>
 </main>

@@ -2,6 +2,7 @@ import { NgModule                   } from '@angular/core';
 import { BrowserModule              } from '@angular/platform-browser';
 import { HttpClientModule           } from '@angular/common/http';
 import { ButtonsModule              } from 'ngx-bootstrap/buttons';
+import { FormsModule                } from '@angular/forms';
 
 import { AppComponent               } from './app.component';
 import { AppRoutingModule           } from './app-routing.module';
@@ -14,6 +15,7 @@ import { HomepageComponent          } from './homepage/homepage.component';
 import { DashboardComponent         } from './dashboard/dashboard.component';
 import { PageNotFoundComponent      } from './pagenotfound/pagenotfound.component';
 import { CustomUiModule             } from '@custom-ui/custom-ui.module';
+
 
 @NgModule({
     declarations: [
@@ -34,6 +36,7 @@ import { CustomUiModule             } from '@custom-ui/custom-ui.module';
         AppRoutingModule,
         HttpClientModule,
         ButtonsModule,
+        FormsModule,
         AccountsModule,
         BookingsModule,
         AnimalsModule,
