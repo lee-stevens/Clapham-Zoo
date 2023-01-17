@@ -32,7 +32,7 @@ namespace API.Controllers
     {
       _context.Animals.Add(animal);
       await _context.SaveChangesAsync();
-      Console.WriteLine(animal.CommonName + " added.");
+      Console.WriteLine("API | " + animal.CommonName + " added.");
       return animal;
     }
 
@@ -41,9 +41,12 @@ namespace API.Controllers
       try{
         var animalToDelete = await _context.Animals.FindAsync(id);
         if(animalToDelete == null){
-          return NotFound($"Animal with Id: {id} was not found, and therefore, not deleted.");
+          return NotFound($"API | Animal with Id: {id} was not found, and therefore, not deleted.");
         }
-        return animalToDelete;
+        _context.Remove(animalToDelete);
+        await _context.SaveChangesAsync();
+        System.Diagnostics.Debug.WriteLine($"API | Animal Deleted with Id: {id}");
+        return StatusCode(StatusCodes.Status200OK);
       }
       catch(Exception){
         return StatusCode(StatusCodes.Status500InternalServerError, $"Error deleting Animal {id}" );

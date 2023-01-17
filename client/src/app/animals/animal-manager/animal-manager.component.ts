@@ -12,7 +12,6 @@ import { Animal                 } from '../../models/Animals';
 })
 export class AnimalManagerComponent implements OnInit {
   animals: any;
-  animalsTS: Animal[] = [];
   addAnimal = true;
   deleteAnimal = true;
   animalToDelete: number = 9999;
@@ -31,42 +30,34 @@ export class AnimalManagerComponent implements OnInit {
     genus: ''
   }
 
-  constructor(private _http: HttpClient, private _animalManagerService: AnimalManagerService) {}
-
-  ngOnInit() {
-    this._http.get("https://localhost:5001/api/animals") //Updates on reload
-    .subscribe({
-      next: res => this.animals = res,
-      error: err => console.log(err)
-    });
-    // this.animals = this._animalManagerService.getAnimals(); //Doesn't update on reload
+  constructor(private _animalManagerService: AnimalManagerService, private _http: HttpClient) {
+    this.getAnimals();
   }
 
-  convertToTS(animalsJSON?: any): Animal[] {
-    return animalsJSON.forEach((animal: any) => {
-      this.animalsTS.push({
-        id: animal.id,
-        commonName: animal.commonName,
-        binomialName: animal.binomialName,
-        kingdom: '',
-        phylum: '',
-        class: '',
-        order: '',
-        subOrder: '',
-        family: '',
-        subFamily: '',
-        genus: '',
-        species: ''
-      })
-    });
+  ngOnInit(): void {
+
+  }
+
+  ngOnChanges(): void {
+    //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
+    //Add '${implements OnChanges}' to the class.
+    this.getAnimals();
+  }
+
+  getAnimals(){
+    console.log("AnimalManagerComponent | Get Animals")
+    this.animals = this._animalManagerService.getAnimals();
   }
 
   onSubmitAnimalForm(){
+    console.log("AnimalManagerComponent | OnSubmitAnimalForm")
     this._animalManagerService.addAnimal(this.animalForm);
+    this.getAnimals();
   }
 
   onSubmitDeleteAnimalForm(id: number){
     this._animalManagerService.deleteAnimal(id);
+    this.getAnimals();
   }
 
 };
