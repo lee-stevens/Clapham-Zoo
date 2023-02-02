@@ -1,4 +1,4 @@
-# Welcome to my Angular-ASP Zoo app!
+# Welcome to the Clapham Zoo repository!
 
 Table of Contents
 
@@ -6,10 +6,13 @@ Table of Contents
 | :-:           | :-                      | 
 | 1             | Design Document         |
 | 2             | Technical Specifcation  | 
+| 3             | Installation Guide      |
 
 # 1] Design Document
 
-A zoo management SPA for zoo visitors to book a visit or view the animals and posts, and for zoo staff to manage all animals, create posts and manage bookings.
+[Figma Board](https://www.figma.com/file/ePMEytK5OL7HIHJGDkyXym/Clapham-Zoo?t=kaElhZpqlkEO3UnB-6)
+
+A zoo management SPA for zoo visitors to book a visit or view the animals and posts, and for zoo staff to manage all animals, create posts and manage bookings. This is a personal project, not a real app.
 
 
 ## Functionality
@@ -90,6 +93,41 @@ dotnet-ef for API (Get the version to match your .NET Core version)
 `dotnet dev-certs https --trust
 ```
 
+# 3] Installation Guide
+
+1. npm install
+
+2. Create a folder 'ssl' in the root folder and place your computer's certificate and key
+
+server.crt
+```CRT
+-----BEGIN CERTIFICATE-----
+
+YOUR CERTIFICATE GOES HERE
+
+-----END CERTIFICATE-----
+```
+
+server.key
+```key
+-----BEGIN PRIVATE KEY-----
+
+YOUR KEY GOES HERE
+
+-----END PRIVATE KEY-----
+
+```
+
+3. Create an environments folder with two files, `environment.prod.ts` and `environment.ts`
+
+```TS
+export const environment = {
+  production: false, //true for prod.ts
+};
+```
+
+
+# 4] Useful Items
 ## CLI Commands
 
 ```console

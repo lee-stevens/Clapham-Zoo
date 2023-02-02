@@ -2017,11 +2017,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Web Development\\asp-angular-animal-app\\API\\API.csproj",
+      "projectUniqueName": "C:\\Web Development\\Clapham-Zoo\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Web Development\\asp-angular-animal-app\\API\\API.csproj",
+      "projectPath": "C:\\Web Development\\Clapham-Zoo\\API\\API.csproj",
       "packagesPath": "C:\\Users\\Madzp\\.nuget\\packages\\",
-      "outputPath": "C:\\Web Development\\asp-angular-animal-app\\API\\obj\\",
+      "outputPath": "C:\\Web Development\\Clapham-Zoo\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Madzp\\AppData\\Roaming\\NuGet\\NuGet.Config",

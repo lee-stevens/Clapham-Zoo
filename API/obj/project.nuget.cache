@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "a+DOw8q3Hs+NFXVVKoV0UhJ2TVmjjUuLr+5UsnoSuwgRslXOY8JY5AThfhmDW579Pad1DtRUh6qhsPPT9JVo4g==",
+  "dgSpecHash": "ks0ya5sUdNh3A71Bn/Roz1EmB4cWzOSZDaIbQJ5DSBs3eWcg43jQXwJDRoa4SM0h8tKWdFvdWLF9epYbbEcWjw==",
   "success": true,
-  "projectFilePath": "C:\\Web Development\\asp-angular-animal-app\\API\\API.csproj",
+  "projectFilePath": "C:\\Web Development\\Clapham-Zoo\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Madzp\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Madzp\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
