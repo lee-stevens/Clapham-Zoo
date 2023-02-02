@@ -55,7 +55,6 @@ I am Following the course "Build an app with ASPNET Core and Angular from scratc
 It uses a ASP.NET's MVC, for joining the Angular frontend with the ASP.NET SQLite backend. 
 
 ## Tools Used
-Developed on my main computer 'Valkyrie' and laptop 'Duo-Pro' with the following tools:
 
 - Angular CLI 14.1.1
 - Node 16.18.1
@@ -70,6 +69,7 @@ Developed on my main computer 'Valkyrie' and laptop 'Duo-Pro' with the following
 2. Angular v14
 3. Entity Framework Core
 4. Postman - API Platform
+5. SCSS
 
 ## VS Code Extentions
 
