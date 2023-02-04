@@ -11,7 +11,7 @@ export class AnimalManagerService {
   animal: any;
   animals: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getAnimals(): Animal[] {
     console.log("AnimalManagerService | Get Animals")

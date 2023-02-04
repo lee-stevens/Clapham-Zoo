@@ -1,5 +1,4 @@
 import { Component, OnInit      } from '@angular/core';
-import { HttpClient             } from '@angular/common/http';
 import { AnimalManagerService   } from './animal-manager.service';
 import { Animal                 } from '../../models/Animals';
 
@@ -7,15 +6,13 @@ import { Animal                 } from '../../models/Animals';
   selector: 'app-animal-manager',
   templateUrl: './animal-manager.component.html',
   styleUrls: ['./animal-manager.component.scss'],
-  //providers: [AnimalManagerService]
-  //Injection at a component level means, each instance of this component gets it's own service
 })
-export class AnimalManagerComponent implements OnInit {
-  animals: any;
+export class AnimalManagerComponent {
+  animals: Animal[] = [];
   addAnimal = true;
   deleteAnimal = true;
   animalToDelete: number = 9999;
-  animalForm: AnimalForm = {
+  animalForm: Animal = {
     species: '',
     id: 0,
     commonName: '',
@@ -30,27 +27,23 @@ export class AnimalManagerComponent implements OnInit {
     genus: ''
   }
 
-  constructor(private _animalManagerService: AnimalManagerService, private _http: HttpClient) {
+  constructor(private _animalManagerService: AnimalManagerService)
+  {
     this.getAnimals();
-  }
-
-  ngOnInit(): void {
-
+    console.log(this.animals)
   }
 
   ngOnChanges(): void {
-    //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
-    //Add '${implements OnChanges}' to the class.
     this.getAnimals();
   }
 
   getAnimals(){
-    console.log("AnimalManagerComponent | Get Animals")
+    console.log("AnimalManagerComponent | getAnimals")
     this.animals = this._animalManagerService.getAnimals();
   }
 
   onSubmitAnimalForm(){
-    console.log("AnimalManagerComponent | OnSubmitAnimalForm")
+    console.log("AnimalManagerComponent | onSubmitAnimalForm")
     this._animalManagerService.addAnimal(this.animalForm);
     this.getAnimals();
   }
@@ -59,20 +52,4 @@ export class AnimalManagerComponent implements OnInit {
     this._animalManagerService.deleteAnimal(id);
     this.getAnimals();
   }
-
 };
-
-export interface AnimalForm {
-  id: number
-  commonName: string
-  binomialName: string
-  kingdom: string
-  phylum: string
-  class: string
-  order: string
-  subOrder: string
-  family: string
-  subFamily: string
-  genus: string
-  species: string
-}

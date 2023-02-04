@@ -1,22 +1,10 @@
 <main class="m-5 d-flex">
   <section>
     <h1 class="justify-content-center">Animal Showcase</h1>
-    <div class="d-flex flex-wrap bd-highlight bg-light cards">
-      <ng-container  class="card" *ngFor="let animal of animals">
-        <div class="card m-3">
-          <div class="p-3 bd-highlight animal-card">
-            <h1 class="text-primary">
-              {{animal.name}}
-            </h1>
-            <p class="text-secondary">
-              Animal ID: {{animal.id}}<br>
-              Binomial Name: {{animal.binomialName}}<br>
-              Common Name: {{animal.commonName}}
-            </p>
-          </div>
-        </div>
-      </ng-container>
+    <div class="animal-card-container d-flex flex-wrap bd-highlight bg-light cards">
+      <div *ngFor="let animal of animals">
+        <app-animal-card [animal]="animal" ></app-animal-card>
+      </div>
     </div>
-    <app-animal-card></app-animal-card>
   </section>
 </main>
