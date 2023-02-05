@@ -1,6 +1,7 @@
-import { Component, OnInit      } from '@angular/core';
+import { Component      } from '@angular/core';
 import { AnimalManagerService   } from './animal-manager.service';
 import { Animal                 } from '../../models/Animals';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-animal-manager',
@@ -9,9 +10,11 @@ import { Animal                 } from '../../models/Animals';
 })
 export class AnimalManagerComponent {
   animals: Animal[] = [];
+  animalsDirect: any;
   addAnimal = true;
   deleteAnimal = true;
   animalToDelete: number = 9999;
+  animalsObservable$ = new Observable<Animal[]>();
   animalForm: Animal = {
     species: '',
     id: 0,
@@ -27,29 +30,25 @@ export class AnimalManagerComponent {
     genus: ''
   }
 
-  constructor(private _animalManagerService: AnimalManagerService)
-  {
-    this.getAnimals();
-    console.log(this.animals)
+  constructor(
+    private _animalManagerService: AnimalManagerService)
+  {}
+
+  ngOnInit() {
+    this.getAnimalsObservable();
   }
 
-  ngOnChanges(): void {
-    this.getAnimals();
-  }
-
-  getAnimals(){
-    console.log("AnimalManagerComponent | getAnimals")
-    this.animals = this._animalManagerService.getAnimals();
+  getAnimalsObservable() {
+    this.animalsObservable$ = this._animalManagerService.getAnimalsAsObservable();
   }
 
   onSubmitAnimalForm(){
-    console.log("AnimalManagerComponent | onSubmitAnimalForm")
     this._animalManagerService.addAnimal(this.animalForm);
-    this.getAnimals();
+    this.getAnimalsObservable();
   }
 
   onSubmitDeleteAnimalForm(id: number){
     this._animalManagerService.deleteAnimal(id);
-    this.getAnimals();
+    this.getAnimalsObservable();
   }
 };

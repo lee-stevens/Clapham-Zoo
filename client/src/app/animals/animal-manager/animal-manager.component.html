@@ -16,7 +16,7 @@
         <th scope="col">Genus</th>
         <th scope="col">Species</th>
       </thead>
-      <tbody *ngFor="let animal of animals">
+      <tbody *ngFor="let animal of animalsObservable$ | async">
         <tr class="">
           <td>{{animal.id}}</td>
           <td>{{animal.commonName}}</td>
@@ -33,7 +33,7 @@
         </tr>
       </tbody>
     </table>
-    <button (click)="getAnimals()">Get Animals</button>
+    <button (click)="getAnimalsObservable()">Get Animals</button>
   </section>
 
   <section *ngIf="addAnimal">
@@ -63,3 +63,9 @@
       </form>
 </section>
 </main>
+
+<div>
+  <app-animal-card *ngFor="let animal of animals"
+    [animal]="animal">
+  </app-animal-card>
+</div>
