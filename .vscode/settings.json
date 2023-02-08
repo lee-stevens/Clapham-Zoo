@@ -23,6 +23,38 @@
   "titleBar.inactiveBackground": "#003e8099",
   "titleBar.inactiveForeground": "#e7e7e799"
 },
-"peacock.color": "#003e80"
-
+//PEACOCK
+"peacock.color": "#003e80",
+//ToDo Tree
+"todo-tree.highlights.defaultHighlight": {
+  "icon": "alert",
+  "type": "text",
+  "foreground": "red",
+  "background": "white",
+  "opacity": 50,
+  "iconColour": "green",
+  "gutterIcon": true
+},
+"todo-tree.highlights.customHighlight": {
+  "REFACTOR":{
+    "icon": "pencil"
+  },
+  "TODO": {
+    "icon": "checklist"
+  },
+  "REMOVE": {
+    "icon": "x-circle"
+  }
 }
+}
+
+//todo tree remove icon to view all tags
+//use octicons for icons https://primer.style/octicons/
+
+//TAGS
+// BUG
+// FIXME
+// TODO
+// REFACTOR
+// DEPRECIATED
+// REMOVE

@@ -9,6 +9,7 @@ import { AccountManagerComponent    } from './accounts/account-manager/account-m
 import { AccountCreatorComponent    } from './accounts/account-creator/account-creator.component';
 import { BookingCreatorComponent    } from './bookings/booking-creator/booking-creator.component';
 import { BookingManagerComponent    } from './bookings/booking-manager/booking-manager.component';
+import { ExperimentsComponent       } from './experiments/experiments.component';
 
 //Place more specific routes at the top
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'booking-creator',          component: BookingCreatorComponent },
   { path: 'booking-manager',          component: BookingManagerComponent },
   { path: 'animal-manager',           component: AnimalManagerComponent },
+  { path: 'experimental',             component: ExperimentsComponent },
   { path: '**',                       component: PageNotFoundComponent }
 ];
 

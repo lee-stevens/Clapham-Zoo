@@ -1,26 +1,33 @@
 import { HttpClient             } from '@angular/common/http';
 import { Injectable             } from '@angular/core';
+import { BehaviorSubject, Observable             } from 'rxjs';
 import { Animal                 } from '../../models/Animals';
 
 @Injectable({
-  providedIn: 'root',
-  //Injecting into the root allows ALL components & modules to use a SINGLE instance of this service
-  //This is a method of making a class a singleton.
+  providedIn: 'root', //Singleton
 })
 export class AnimalManagerService {
   animal: any;
   animals: any;
 
-  constructor(private http: HttpClient) { }
+  animalsSubject$ = new BehaviorSubject<Animal[]>([]);
+  animals$: Observable<Animal[]> = this.animalsSubject$.asObservable();
 
-  getAnimals(): Animal[] {
+  constructor(private http: HttpClient) {
+    this.getAnimals();
+  }
+
+  getAnimals() {
     console.log("AnimalManagerService | Get Animals")
-    this.http.get("https://localhost:5001/api/animals")
+    this.http.get<Animal[]>("https://localhost:5001/api/animals")
     .subscribe({
-      next: res => this.animals = res,
+      next: res => this.animalsSubject$.next(res),
       error: err => console.log(err)
     });
-    return this.animals;
+  }
+
+  getAnimalsAsObservable(): Observable<Animal[]> {
+    return this.animalsSubject$.asObservable();
   }
 
   getAnimal(id: number): any {

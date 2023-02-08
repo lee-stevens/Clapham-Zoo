@@ -1,0 +1,14 @@
+.experiments-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  .experiment {
+    padding: 30px;
+
+    .experiment__element {
+      border: 5px;
+      border-color: black;
+      border-radius: 20%;
+    }
+  }
+}
