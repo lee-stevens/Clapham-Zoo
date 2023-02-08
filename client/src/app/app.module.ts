@@ -15,6 +15,7 @@ import { HomepageComponent          } from './homepage/homepage.component';
 import { DashboardComponent         } from './dashboard/dashboard.component';
 import { PageNotFoundComponent      } from './pagenotfound/pagenotfound.component';
 import { CustomUiModule             } from '@custom-ui/custom-ui.module';
+import { ExperimentsModule } from './experiments/experiments.module';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { CustomUiModule             } from '@custom-ui/custom-ui.module';
         NavbarComponent,
         HomepageComponent,
         DashboardComponent,
-        PageNotFoundComponent
+        PageNotFoundComponent,
     ],
     providers: [
     //Injecting at a module level means one service is shared for ALL components within this module
@@ -40,7 +41,8 @@ import { CustomUiModule             } from '@custom-ui/custom-ui.module';
         AccountsModule,
         BookingsModule,
         AnimalsModule,
-        CustomUiModule
+        CustomUiModule,
+        ExperimentsModule
     ]
 })
 export class AppModule { }

@@ -31,8 +31,8 @@ export class AnimalManagerComponent {
   }
 
   constructor(
-    private _animalManagerService: AnimalManagerService)
-  {}
+    private _animalManagerService: AnimalManagerService
+  ) {}
 
   ngOnInit() {
     this.getAnimalsObservable();

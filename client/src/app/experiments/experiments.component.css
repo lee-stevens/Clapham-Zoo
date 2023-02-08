@@ -1,0 +1,12 @@
+.experiments-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.experiments-wrapper .experiment {
+  padding: 30px;
+}
+.experiments-wrapper .experiment .experiment__element {
+  border: 5px;
+  border-color: black;
+  border-radius: 20%;
+}/*# sourceMappingURL=experiments.component.css.map */
