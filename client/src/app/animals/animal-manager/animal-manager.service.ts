@@ -10,8 +10,8 @@ export class AnimalManagerService {
   animal: any;
   animals: any;
 
-  animalsSubject = new BehaviorSubject<Animal[]>([]);
-  animals$: Observable<Animal[]> = this.animalsSubject.asObservable();
+  animalsSubject$ = new BehaviorSubject<Animal[]>([]);
+  animals$: Observable<Animal[]> = this.animalsSubject$.asObservable();
 
   constructor(private http: HttpClient) {
     this.getAnimals();
@@ -21,13 +21,13 @@ export class AnimalManagerService {
     console.log("AnimalManagerService | Get Animals")
     this.http.get<Animal[]>("https://localhost:5001/api/animals")
     .subscribe({
-      next: res => this.animalsSubject.next(res),
+      next: res => this.animalsSubject$.next(res),
       error: err => console.log(err)
     });
   }
 
   getAnimalsAsObservable(): Observable<Animal[]> {
-    return this.animalsSubject.asObservable();
+    return this.animalsSubject$.asObservable();
   }
 
   getAnimal(id: number): any {

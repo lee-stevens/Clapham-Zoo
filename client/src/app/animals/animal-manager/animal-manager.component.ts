@@ -1,7 +1,7 @@
-import { Component      } from '@angular/core';
+import { Component              } from '@angular/core';
+import { Observable             } from 'rxjs';
 import { AnimalManagerService   } from './animal-manager.service';
 import { Animal                 } from '../../models/Animals';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-animal-manager',
