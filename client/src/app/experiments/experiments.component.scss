@@ -4,11 +4,10 @@
 
   .experiment {
     padding: 30px;
+    box-shadow: 2px 1px 1px;
+  }
 
-    .experiment__element {
-      border: 5px;
-      border-color: black;
-      border-radius: 20%;
-    }
+  .note {
+    padding: 30px;
   }
 }
