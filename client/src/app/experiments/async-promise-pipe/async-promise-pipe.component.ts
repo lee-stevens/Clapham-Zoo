@@ -17,8 +17,8 @@ export class ExperimentsAsyncPromisePipeComponent   {
 
   reset() {
     this.arrived = false;
-    this.greeting = new Promise<string>((resolve, reject) => {
-      this.resolve = resolve;
+    this.greeting = new Promise<string>((res, rej) => {
+      this.resolve = res;
     });
   }
 
