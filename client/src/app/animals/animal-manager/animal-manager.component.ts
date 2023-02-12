@@ -9,12 +9,8 @@ import { Animal                 } from '../../models/Animals';
   styleUrls: ['./animal-manager.component.scss'],
 })
 export class AnimalManagerComponent {
-  animals: Animal[] = [];
-  animalsDirect: any;
   addAnimal = true;
-  deleteAnimal = true;
-  animalToDelete: number = 9999;
-  animalsObservable$ = new Observable<Animal[]>();
+  animals$ = new Observable<Animal[]>();
   animalForm: Animal = {
     species: '',
     id: 0,
@@ -32,23 +28,16 @@ export class AnimalManagerComponent {
 
   constructor(
     private _animalManagerService: AnimalManagerService
-  ) {}
-
-  ngOnInit() {
-    this.getAnimalsObservable();
-  }
-
-  getAnimalsObservable() {
-    this.animalsObservable$ = this._animalManagerService.getAnimalsAsObservable();
+  )
+  {
+    this.animals$ = this._animalManagerService.getAnimalsAsObservable();
   }
 
   onSubmitAnimalForm(){
     this._animalManagerService.addAnimal(this.animalForm);
-    this.getAnimalsObservable();
   }
 
-  onSubmitDeleteAnimalForm(id: number){
+  onClickDeleteAnimal(id: number){
     this._animalManagerService.deleteAnimal(id);
-    this.getAnimalsObservable();
   }
 };

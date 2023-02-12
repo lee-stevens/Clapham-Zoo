@@ -15,8 +15,9 @@
         <th scope="col">SubFamily</th>
         <th scope="col">Genus</th>
         <th scope="col">Species</th>
+        <th></th>
       </thead>
-      <tbody *ngFor="let animal of animalsObservable$ | async">
+      <tbody *ngFor="let animal of animals$ | async">
         <tr class="">
           <td>{{animal.id}}</td>
           <td>{{animal.commonName}}</td>
@@ -30,42 +31,62 @@
           <td>{{animal.subFamily}}</td>
           <td>{{animal.genus}}</td>
           <td>{{animal.species}}</td>
+          <td><button class="btn btn-warning" (click)="onClickDeleteAnimal(animal.id)">Delete</button></td>
         </tr>
       </tbody>
     </table>
-    <button (click)="getAnimalsObservable()">Get Animals</button>
   </section>
 
   <section *ngIf="addAnimal">
-      <form #addAnimalForm (ngSubmit)="onSubmitAnimalForm()" class="add-animal-container">
+  <form #addAnimalForm (ngSubmit)="onSubmitAnimalForm()" class="animal-form-container">
+    <div class="field-container">
+      <div class="animal-form__field">
+        <label for="commonName">Common Name: </label>
+        <input [(ngModel)]="animalForm.commonName" class="form-control" name="tempAnimalForm.commonName" type="text">
+      </div>
+
+      <div class="animal-form__field">
+        <label for="binomialName">Binomial Name: </label>
+        <input [(ngModel)]="animalForm.binomialName" class="form-control" name="tempAnimalForm.binomialName" type="text">
+      </div>
+
+      <div class="animal-form__field">
+        <label for="kingdom">Kingdom: </label>
+        <input [(ngModel)]="animalForm.kingdom" class="form-control" name="tempAnimalForm.kingdom" type="text">
+      </div>
+
+      <div class="animal-form__field">
+        <label for="phylum">Phylum: </label>
+        <input [(ngModel)]="animalForm.phylum" class="form-control" name="tempAnimalForm.phylum" type="text">
+      </div>
+
+      <div class="animal-form__field">
+        <label for="class">Class: </label>
+        <input [(ngModel)]="animalForm.class" class="form-control" name="tempAnimalForm.class" type="text">
+      </div>
+
+      <div class="animal-form__field">
+        <label for="family">Family: </label>
+        <input [(ngModel)]="animalForm.family" class="form-control" name="tempAnimalForm.family" type="text">
+      </div>
+
+      <div class="animal-form__field">
+        <label for="genus">Genus: </label>
+        <input [(ngModel)]="animalForm.genus" class="form-control" name="tempAnimalForm.genus" type="text">
+      </div>
+
+      <div class="animal-form__field">
+        <label for="order">Order: </label>
+        <input [(ngModel)]="animalForm.order" class="form-control" name="tempAnimalForm.order" type="text">
+      </div>
+
+      <div class="animal-form__field">
         <label for="species">Species: </label>
         <input [(ngModel)]="animalForm.species" class="form-control" name="tempAnimalForm.species" type="text">
+      </div>
+    </div>
 
-        <label for="species">Common Name: </label>
-        <input [(ngModel)]="animalForm.commonName" class="form-control" name="tempAnimalForm.commonName" type="text">
-
-        <label for="species">Kingdom: </label>
-        <input [(ngModel)]="animalForm.kingdom" class="form-control" name="tempAnimalForm.kingdom" type="text">
-
-        <label for="phylum">Phylum: </label>
-        <input [(ngModel)]="animalForm.phylum" class="form-control" name="tempAnimalForm.kingdom" type="text">
-
-        <button class="btn" type="submit">Submit</button>
-        </form>
+    <button class="btn btn-primary animal-form__submit" type="submit">Submit</button>
+  </form>
   </section>
-
-  <section *ngIf="deleteAnimal">
-    <form #deleteAnimalForm (ngSubmit)="onSubmitDeleteAnimalForm(animalToDelete)" class="delete-animal-container">
-      <label for="species">Id: </label>
-      <input [(ngModel)]="animalToDelete" class="form-control" name="animalToDelete" type="number">
-
-      <button class="btn" type="submit">Submit</button>
-      </form>
-</section>
 </main>
-
-<div>
-  <app-animal-card *ngFor="let animal of animals"
-    [animal]="animal">
-  </app-animal-card>
-</div>
