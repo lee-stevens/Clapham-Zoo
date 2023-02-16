@@ -7,12 +7,14 @@ import { Animal                 } from '../../models/Animals';
   providedIn: 'root',
 })
 export class AnimalManagerService {
-  animal: any;
   animalsSubject$$ = new BehaviorSubject<Animal[]>([]);
+  animal: any;
 
   constructor(private http: HttpClient) {
     this.getAnimals();
   }
+
+  getAnimalsAsObservable(): Observable<Animal[]> { return this.animalsSubject$$.asObservable() }
 
   getAnimals() {
     console.log("AnimalManagerService | Get Animals")
@@ -21,10 +23,6 @@ export class AnimalManagerService {
       next: res => this.animalsSubject$$.next(res),
       error: err => console.log(err)
     });
-  }
-
-  getAnimalsAsObservable(): Observable<Animal[]> {
-    return this.animalsSubject$$.asObservable();
   }
 
   getAnimal(id: number): any {

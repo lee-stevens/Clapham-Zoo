@@ -1,6 +1,22 @@
 <main class="m-5">
-  <section>
+  <div class="animal-table-container">
     <h1>Animal Manager</h1>
+
+    <div class="animal-table__filter">
+      <div class="btn-group" dropdown>
+        <button id="button-animated" dropdownToggle type="button" class="btn btn-primary dropdown-toggle" aria-controls="dropdown-animated">
+          Filter Value
+        </button>
+        <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-animated">
+          <li role="menuitem"><a class="dropdown-item">ID</a></li>
+          <li role="menuitem"><a class="dropdown-item">Common Name</a></li>
+          <li role="menuitem"><a class="dropdown-item">Binomial Name</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <br>
+
     <table class="table table-striped table-hover table-bordered">
       <thead class="">
         <th scope="col">ID (Key)</th>
@@ -17,8 +33,8 @@
         <th scope="col">Species</th>
         <th></th>
       </thead>
-      <tbody *ngFor="let animal of animals$ | async">
-        <tr class="">
+      <tbody *ngFor="let animal of animals">
+        <tr>
           <td>{{animal.id}}</td>
           <td>{{animal.commonName}}</td>
           <td>{{animal.binomialName}}</td>
@@ -35,10 +51,10 @@
         </tr>
       </tbody>
     </table>
-  </section>
+  </div>
 
-  <section *ngIf="addAnimal">
-  <form #addAnimalForm (ngSubmit)="onSubmitAnimalForm()" class="animal-form-container">
+  <div *ngIf="addAnimal">
+  <form #addAnimalForm (ngSubmit)="onSubmitAnimalForm()" class="animal-form">
     <div class="field-container">
       <div class="animal-form__field">
         <label for="commonName">Common Name: </label>
@@ -88,5 +104,5 @@
 
     <button class="btn btn-primary animal-form__submit" type="submit">Submit</button>
   </form>
-  </section>
+  </div>
 </main>

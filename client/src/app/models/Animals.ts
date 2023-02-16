@@ -12,3 +12,23 @@ export interface Animal {
   genus: string
   species: string
 }
+
+export interface AnimalTableFilter {
+  columnName: AnimalColumns,
+  value: string
+}
+
+export enum AnimalColumns {
+  ID,
+  CommonName,
+  BinomialName,
+  Kingdom,
+  Phylum,
+  Class,
+  Order,
+  SubOrder,
+  Family,
+  SubFamily,
+  Genus,
+  Species
+}

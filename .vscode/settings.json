@@ -1,13 +1,3 @@
-{
-  "files.exclude": {
-    "**/*.css": true,
-    "**/*.css.map": true
-  }
-}
-
-//todo tree remove icon to view all tags
-//use octicons for icons https://primer.style/octicons/
-
 //TAGS
 // BUG
 // FIXME

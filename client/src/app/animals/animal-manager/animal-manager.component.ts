@@ -1,7 +1,7 @@
 import { Component              } from '@angular/core';
 import { Observable             } from 'rxjs';
 import { AnimalManagerService   } from './animal-manager.service';
-import { Animal                 } from '../../models/Animals';
+import { Animal, AnimalColumns, AnimalTableFilter                 } from '../../models/Animals';
 
 @Component({
   selector: 'app-animal-manager',
@@ -10,7 +10,7 @@ import { Animal                 } from '../../models/Animals';
 })
 export class AnimalManagerComponent {
   addAnimal = true;
-  animals$ = new Observable<Animal[]>();
+  animals: Animal[];
   animalForm: Animal = {
     species: '',
     id: 0,
@@ -25,12 +25,19 @@ export class AnimalManagerComponent {
     subFamily: '',
     genus: ''
   }
+  tableFilter: AnimalTableFilter = {
+    columnName: AnimalColumns.ID,
+    value: ""
+  }
 
   constructor(
     private _animalManagerService: AnimalManagerService
   )
   {
-    this.animals$ = this._animalManagerService.getAnimalsAsObservable();
+    this._animalManagerService.getAnimalsAsObservable()
+    .subscribe(animals => {
+      this.animals = animals
+    })
   }
 
   onSubmitAnimalForm(){
